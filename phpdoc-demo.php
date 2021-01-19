@@ -1,3 +1,5 @@
+<?php 
+
 use Symfony\Component\HttpFoundation\Request;
 
 class Controller
@@ -17,3 +19,5 @@ class Controller
         return $this->json(['email' => $username]);
     }
 }
+
+?>
