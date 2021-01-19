@@ -13,7 +13,7 @@ class Controller
     {
         $userId = $request->get('id');
         $sql = "SELECT email FROM user WHERE id='$userId'";
-        $statement = $this->connection->prepare($sql); // Noncompliant S3649 SQL injection
+        $statement = $this->connection->prepare($sql);
         $statement->execute();
         $username = $statement->fetchColumn();
         return $this->json(['email' => $username]);
