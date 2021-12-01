@@ -22,16 +22,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: SonarCloud token
-        run: echo ${{ secrets.SONAR_TOKEN }}
-        
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
-          sonar.host.url: https://squad-4-core.sc-dev.io
+          args: "-Dsonar.host.url=https://squad-4-core.sc-dev.io"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
