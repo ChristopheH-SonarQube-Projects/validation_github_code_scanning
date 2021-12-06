@@ -18,7 +18,7 @@ class Controller
         $username = $statement->fetchColumn();
         return $this->json(['email' => $username]);
     }
-    public function getUsername()
+    public function getUsername(Request $request)
     {
         $userId = $request->get('id');
         $sql = "SELECT username FROM user WHERE id='$userId'";
