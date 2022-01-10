@@ -19,7 +19,12 @@ class Controller
         return $this->json(['email' => $username]);
     }
     public function toto()
-    {}
+    {
+        /**
+        * nothing
+        */
+    }
+    
 }
 
 ?>
