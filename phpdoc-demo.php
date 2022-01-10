@@ -18,11 +18,14 @@ class Controller
         $username = $statement->fetchColumn();
         return $this->json(['email' => $username]);
     }
-    public function toto()
+    public function newVulnFunction(Request $request)
     {
-        /**
-        * nothing
-        */
+        $userId = $request->get('id');
+        $sql = "SELECT username FROM user WHERE id='$userId'";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        $username = $statement->fetchColumn();
+        return $this->json(['email' => $username]);
     }
     
 }
