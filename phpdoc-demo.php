@@ -28,6 +28,16 @@ class Controller
         return $this->json(['username' => $username]);
         
     }
+      public function getNothing(Request $request)
+    {
+        $userId = $request->get('id');
+        $sql = "SELECT nothing FROM user WHERE id='$userId'";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        $username = $statement->fetchColumn();
+        return $this->json(['username' => $username]);
+        
+    }
 }
 
 ?>
