@@ -18,7 +18,7 @@ class Controller
         $username = $statement->fetchColumn();
         return $this->json(['email' => $username]);
     }
-    public function getUsername(Request $request)
+    public function newVulnFunction(Request $request)
     {
         $userId = $request->get('id');
         $sql = "SELECT username FROM user WHERE id='$userId'";
@@ -36,7 +36,6 @@ class Controller
         $statement->execute();
         $username = $statement->fetchColumn();
         return $this->json(['username' => $username]);
-        
     }
 }
 
