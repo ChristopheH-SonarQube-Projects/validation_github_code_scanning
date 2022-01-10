@@ -31,7 +31,7 @@ class Controller
       public function getNothing(Request $request)
     {
         $userId = $request->get('id');
-        $sql = "SELECT nothing FROM user WHERE id='$userId'";
+        $sql = "SELECT nothingmore FROM user WHERE id='$userId'";
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $username = $statement->fetchColumn();
