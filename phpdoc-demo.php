@@ -28,6 +28,12 @@ class Controller
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $username = $statement->fetchColumn();
+        
+        getNothing2($request);
+        getNothing3($request);
+        getNothing4($request);
+        createMyAccount();
+
         return $this->json(['username' => $username]);
         
     }
