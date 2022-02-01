@@ -31,7 +31,7 @@ class MyAwesomeClass
         return $this->json(['username' => $username]);
         
     }
-    function createMyAccount() {
+    function createMyAccount() { // should trigger something
         $email = $_GET['email'];
         $name = $_GET['name'];
         $password = $_GET['password'];
