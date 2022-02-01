@@ -1,5 +1,8 @@
 <?php 
 
+echo $_GET['name'];
+
+
 use Symfony\Component\HttpFoundation\Request;
 
 class Controller
