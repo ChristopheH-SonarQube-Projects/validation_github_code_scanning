@@ -46,7 +46,7 @@ class Controller
         error_reporting(32); // Sensitive
       
         ini_set('docref_root', '1'); // Sensitive
-        toto
+       
         ini_set('display_startup_errors', '1'); // Sensitive
         ini_set('error_log', "path/to/logfile"); // Sensitive - check logfile is secure
         ini_set('error_reporting', E_PARSE ); // Sensitive
