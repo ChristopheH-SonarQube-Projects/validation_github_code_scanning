@@ -37,6 +37,28 @@ class Controller
         return $this->json(['username' => $username]);
         
     }
+    public function newVulnFunction2(Request $request)
+    {
+        $userId = $request->get('id');
+        $sql = "SELECT name FROM user WHERE id='$userId'";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        $username = $statement->fetchColumn();
+        
+        return $this->json(['username' => $username]);
+        
+    }
+    public function newVulnFunction3(Request $request)
+    {
+        $userId = $request->get('id');
+        $sql = "SELECT email FROM user WHERE id='$userId'";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        $username = $statement->fetchColumn();
+ 
+        return $this->json(['username' => $username]);
+        
+    }
       public function getNothing(Request $request)
     {
         define( 'FORCE_SSL_LOGIN', false); // Sensitive
