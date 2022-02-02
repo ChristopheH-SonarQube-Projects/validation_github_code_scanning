@@ -17,20 +17,7 @@ class MyAwesomeClass
         $username = $statement->fetchColumn();
         return $this->json(['email' => $username]);
     }
-
-    public function newVulnFunction(Request $request)
-    {
-        $userId = $request->get('id');
-        $sql = "SELECT username FROM user WHERE id='$userId'";
-        $statement = $this->connection->prepare($sql);
-        $statement->execute();
-        $username = $statement->fetchColumn();
-
-        createMyAccount();
-
-        return $this->json(['username' => $username]);
-        
-    }
+ 
     function createMyAccount() { // should trigger something
         $email = $_GET['email'];
         $name = $_GET['name'];
