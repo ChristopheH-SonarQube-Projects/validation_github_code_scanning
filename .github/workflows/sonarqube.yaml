@@ -1,0 +1,27 @@
+name: SonarQube
+on:
+  push:
+    branches:
+      - master # or the name of your main branch
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args:
+            -Dsonar.projectKey=ChrisReferenceProjects_Vuln-PHP-petit-projet_AYD7p_ljFgHhmbhDiRV4
+            
+      - uses: sonarsource/sonarqube-quality-gate-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
