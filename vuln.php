@@ -21,6 +21,7 @@ class Controller
     
         public function anotherSqlQuery1(Request $request)
     {
+            
         $userId = $request->get('name');
         $sql = "SELECT username FROM user WHERE id='$userId'";
         $statement = $this->connection->prepare($sql);
