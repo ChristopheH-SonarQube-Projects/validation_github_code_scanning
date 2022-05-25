@@ -27,6 +27,7 @@ class Controller
         $statement->execute();
         $username = $statement->fetchColumn();
         return $this->json(['email' => $username]);
+            
     }
 }
 ?>
