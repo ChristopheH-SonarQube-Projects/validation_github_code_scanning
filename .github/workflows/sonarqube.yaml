@@ -20,7 +20,7 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           args:
-            -Dsonar.projectKey=ChrisReferenceProjects_Vuln-PHP-petit-projet_AYD7p_ljFgHhmbhDiRV4
+            -Dsonar.projectKey=toto
             
       - uses: sonarsource/sonarqube-quality-gate-action@master
         env:
