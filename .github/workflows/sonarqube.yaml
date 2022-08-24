@@ -21,7 +21,4 @@ jobs:
         with:
           args:
             -Dsonar.projectKey=toto
-            
-      - uses: sonarsource/sonarqube-quality-gate-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
