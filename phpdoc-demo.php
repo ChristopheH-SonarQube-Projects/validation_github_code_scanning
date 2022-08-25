@@ -36,7 +36,7 @@ class Controller
         $username = $statement->fetchColumn();
         return $this->json(['email' => $username]);
     }
-    
+    // toto
 }
 
 ?>
