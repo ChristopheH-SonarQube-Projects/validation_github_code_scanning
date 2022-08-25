@@ -2,7 +2,7 @@ name: SonarQube
 on:
   push:
     branches:
-      - master # or the name of your main branch
+      - main # or the name of your main branch
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
@@ -20,8 +20,9 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           args:
-            -Dsonar.projectKey=ChrisReferenceProjects_Vuln-PHP-petit-projet_AYD7p_ljFgHhmbhDiRV4
+            -Dsonar.projectKey=toto
             
       - uses: sonarsource/sonarqube-quality-gate-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
