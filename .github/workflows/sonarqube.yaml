@@ -2,7 +2,7 @@ name: SonarQube
 on:
   push:
     branches:
-      - main # or the name of your main branch
+      - master # or the name of your main branch
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
@@ -20,4 +20,4 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           args:
-            -Dsonar.projectKey=toto
+            -Dsonar.projectKey=ChristopheH-SonarQube-Projects_validation_github_code_scanning_AYL0kARV5qbnfiPZItae
