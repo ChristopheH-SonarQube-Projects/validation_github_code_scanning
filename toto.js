@@ -13,7 +13,7 @@ var init_db = require('./model/init_db');
 var login = require('./routes/login');
 var products = require('./routes/products');
 
-var app = express();
+var app = express(); // fameorfvmoserhgvsrmotuhdf
 
 // config second logger
 log4js.loadAppender('file');
